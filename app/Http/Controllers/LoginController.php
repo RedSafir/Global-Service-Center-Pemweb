@@ -30,4 +30,13 @@ class LoginController extends Controller
         return back()->with('LoginError', 'Username atau Password salah');
         
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('MainMenu');
+    }
 }
