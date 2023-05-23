@@ -21,6 +21,8 @@ return new class extends Migration
             $table->boolean("status")->nullable();
             $table->string("kerusakan", 20)->nullable();
             $table->integer("jumlah_butuh")->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         }); 
     }
 

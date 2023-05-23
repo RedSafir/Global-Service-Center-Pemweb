@@ -18,6 +18,8 @@ return new class extends Migration
                 table:'pelanggan', indexName:"barang_2barang_id")->onDelete("cascade");
             $table->string("nama_barang", 20)->nullable();
             $table->string("foto_barang", 50)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string("keterangan", 20)->nullable();
             $table->string("harga", 20)->nullable();
             $table->integer("stock")->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

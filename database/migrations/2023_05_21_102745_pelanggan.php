@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string("alamat", 30)->nullable();
             $table->char("no_telp", 20)->nullable();
             $table->char("no_ktp", 20)->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
