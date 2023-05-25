@@ -20,6 +20,12 @@
       margin-left: auto;
       font-size: 30px;
     }
+    a {
+        color: #434242;
+    }
+    a:hover {
+        color: #FFFFFF;
+    }
 
 </style>
 <header>

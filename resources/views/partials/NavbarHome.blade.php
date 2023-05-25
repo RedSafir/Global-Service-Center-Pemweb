@@ -60,6 +60,7 @@
     a {
         color: #FFFFFF;
     }
+    
 </style>
 <body class="fix-header">
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -81,20 +82,25 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="list-group mt-3">
-                        <li class="list-group-item"><a href="/home">Dashboard</a></li>
+                        <li class="list-group-item"><a href="/home"    onMouseOver="this.style.color='#FFFFFF'"
+                            onMouseOut="this.style.color='#434242'">Dashboard</a></li>
                     </ul>
                     <ul class="list-group mt-3">
-                        <li class="list-group-item"><a href="/Stock">Stock</a></li>
+                        <li class="list-group-item"><a href="/Stock" onMouseOver="this.style.color='#FFFFFF'"
+                            onMouseOut="this.style.color='#434242'">Stock</a></li>
                     </ul>
                     <ul class="list-group mt-3">
-                        <li class="list-group-item"><a href="/Pelanggan">Pelanggan</a></li>
+                        <li class="list-group-item"><a href="/Pelanggan" onMouseOver="this.style.color='#FFFFFF'"
+                            onMouseOut="this.style.color='#434242'">Pelanggan</a></li>
                     </ul>
                     <ul class="list-group mt-3">
-                        <li class="list-group-item"><a href="/Transaksi">Transaksi</a></li>
+                        <li class="list-group-item"><a href="/Transaksi" onMouseOver="this.style.color='#FFFFFF'"
+                            onMouseOut="this.style.color='#434242'">Transaksi</a></li>
                     </ul>
                     <div class="mt-5">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="/logout">Logout</a></li>
+                            <li class="list-group-item"><a href="/logout" onMouseOver="this.style.color='#FFFFFF'"
+                                onMouseOut="this.style.color='#434242'">Logout</a></li>
                         </ul>
                     </div>
                 </div>
