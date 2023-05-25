@@ -24,7 +24,7 @@
 @endPushOnce
 
 @section('container')
-<div class="container">
+<div class="container mt-5">
     <h2>Form Tambah Stock</h2>
     <button class="btn btn-secondary" onclick="window.history.back();">
         <i class="fas fa-arrow-left"></i> Kembali

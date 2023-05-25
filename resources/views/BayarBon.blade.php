@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    @include('NavbarHome');
+    @include('partials.NavbarHome');
     <div class="container mt-5">
         <div class="row">
             <div class="col text-start">
@@ -67,5 +67,5 @@
 
 
 </body>
-@include('Footer');
+@include('partials.Footer');
 </html>

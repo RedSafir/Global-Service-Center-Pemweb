@@ -41,7 +41,7 @@
 <body class="background">
 
     <div class="container">
-        @include('Navbar')
+        @include('partials.Navbar')
 
         <main>
             <div class="container mt-5">
@@ -83,7 +83,7 @@
             </div>
         </main>
 
-        @include('Footer')
+        @include('Partials.Footer')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/js/bootstrap.bundle.min.js"></script>

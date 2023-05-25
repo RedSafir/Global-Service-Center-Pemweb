@@ -3,6 +3,7 @@
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\TransaksiController;
@@ -32,6 +33,10 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('Home');
+});
+
+Route::get('/stock', function () {
+    return view('stock');
 });
 
 Route::post('/login', [LoginController::class, 'login_action']);

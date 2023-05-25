@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('container')
-<div class="container mt-5">
+<div class="container mt-5 pt-5">
   <div class="row">
     <div class="col text-start">
       <h2>Data Transaksi</h2>

@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    @include('NavbarHome');
+    @include('partials.NavbarHome');
    
         <div class="card-group mt-5" >
             <div class="card ms-5 me-5">
@@ -123,7 +123,7 @@
             
           </div>
 </body>
-@include('Footer')
+@include('partials.Footer')
 <script>
     // Mengambil elemen canvas
     var customerCanvas = document.getElementById("customerChart").getContext("2d");

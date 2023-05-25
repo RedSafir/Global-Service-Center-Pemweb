@@ -2,6 +2,9 @@
 
 @pushOnce('style')
     <style>
+    a {
+        color: white;
+    }
     .bottom-divider {
         border-top: 5px solid #CCCCCC;
         padding-top: 10px;
@@ -24,7 +27,7 @@
 @endPushOnce
 
 @section('container')
-    <div class="container mt-5">
+    <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col text-start">
                 <h2>Data Paket</h2>
