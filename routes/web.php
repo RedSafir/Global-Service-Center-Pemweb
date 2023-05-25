@@ -1,12 +1,12 @@
 <?php
 
-<<<<<<< HEAD
+
 use App\Http\Controllers\dashboard;
 use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\StockController;
-=======
+
 use App\Http\Controllers\LoginController;
->>>>>>> Frontend
+
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Fragment\RoutableFragmentRenderer;
 
