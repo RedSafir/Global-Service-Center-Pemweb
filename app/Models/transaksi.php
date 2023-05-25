@@ -17,10 +17,10 @@ class Transaksi extends Model
         "id"
     ];
 
-    public function perbaikan()
-    {
-        return $this->belongsTo(perbaikan::class);
-    }
+    // public function perbaikan()
+    // {
+    //     return $this->belongsTo(perbaikan::class);
+    // }
 
     public function pelanggan()
     {

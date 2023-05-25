@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Document</title>
+@extends('layout.main')
+
+@pushOnce('style')
     <style>
         .bottom-divider {
             border-top: 5px solid #CCCCCC;
@@ -28,30 +20,30 @@
                 flex-wrap: wrap;
             }
         }
-
     </style>
-</head>
-<body>
-    @include('NavbarHome');
+@endPushOnce
+    
+@section('container')
     <div class="container">
         <h2>Form Tambah Stock</h2>
         <button class="btn btn-secondary" onclick="window.history.back();">
             <i class="fas fa-arrow-left"></i> Kembali
         </button>
 
-        <form method="POST" action="/submit-pembayaran">
+        <form method="POST" action="/Bayar/Pembayaran/{{ $bayar->id }}">
+            @method("put")
             @csrf
             <div class="mb-3">
                 <label for="kode_invoice" class="form-label">Kode Invoice</label>
-                <input type="text" class="form-control" id="kode_invoice" name="kode_invoice">
+                <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" value="{{ $bayar->invoice }}">
             </div>
             <div class="mb-3">
                 <label for="nama_member" class="form-label">Nama Member</label>
-                <input type="text" class="form-control" id="nama_member" name="nama_member">
+                <input type="text" class="form-control" id="nama_member" name="nama_member" value="{{ $pelanggan }}">
             </div>
             <div class="mb-3">
                 <label for="total_bayar" class="form-label">Total yang Harus Dibayar</label>
-                <input type="number" class="form-control" id="total_bayar" name="total_bayar">
+                <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="{{ $bayar->tot_harga }}">
             </div>
             <div class="mb-3">
                 <label for="jumlah_pembayaran" class="form-label">Jumlah Pembayaran</label>
@@ -60,7 +52,9 @@
             <button type="submit" class="btn btn-primary">Bayar</button>
         </form>
     </div>
+@endsection
 
+@pushOnce('scripts')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function resetForm() {
@@ -70,14 +64,5 @@
             document.getElementById("stock").value = "";
         }
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-    
-
-
-
-
-</body>
-@include('Footer');
-</html>
+@endPushOnce

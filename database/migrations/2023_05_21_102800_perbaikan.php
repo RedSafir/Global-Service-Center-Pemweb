@@ -14,13 +14,13 @@ return new class extends Migration
     {
         Schema::create("perbaikan", function(Blueprint $table){
             $table->id();
-            $table->foreignId("barang_pelanggan_id")->constrained(
-                table:"barang_pelanggan", indexName:"perbaikan_2pelanggan_id")->onDelete("cascade");
-            $table->foreignId("id_barang_gudang")->constrained(
-                table:"barang_gudang", indexName:"perbaikan_2gudang")->onDelete("cascade");
-            $table->boolean("status")->nullable();
-            $table->string("kerusakan", 20)->nullable();
-            $table->integer("jumlah_butuh")->nullable();
+            // $table->foreignId("barang_pelanggan_id")->constrained(
+            //     table:"barang_pelanggan", indexName:"perbaikan_2pelanggan_id")->onDelete("cascade");
+            // $table->foreignId("id_barang_gudang")->constrained(
+            //     table:"barang_gudang", indexName:"perbaikan_2gudang")->onDelete("cascade");
+            // $table->boolean("status")->nullable();
+            // $table->string("kerusakan", 20)->nullable();
+            // $table->integer("jumlah_butuh")->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         }); 
