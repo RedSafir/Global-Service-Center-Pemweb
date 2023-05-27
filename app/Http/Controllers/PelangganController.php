@@ -31,13 +31,14 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Pelanggan();
-        $model->nama = $request->namapelanggan;
-        $model->alamat = $request->alamatpelanggan;
-        $model->kelamin = $request->jeniskelamin;
-        $model->no_telp = $request->nomorTelphone;
-        $model->no_ktp = $request->nomerKTP;
-        $model->save();
+        Pelanggan::create([
+            "nama"      =>$request->namapelanggan,
+            "alamat"    =>$request->alamatpelanggan,
+            "kelamin"   =>$request->jeniskelamin,
+            "no_telp"   =>$request->nomorTelphone,
+            "no_ktp"    =>$request->nomerKTP
+        ]);
+
         return redirect()->back();
     }
 
@@ -54,7 +55,7 @@ class PelangganController extends Controller
      */
     public function edit(string $id)
     {
-        $pelanggan = DB::table("pelanggan")->where("id", $id)->first();
+        $pelanggan = Pelanggan::where("id", $id)->first();
         return view("edit.EditPelanggan", ["pelanggan"=>$pelanggan]);
     }
 
@@ -63,12 +64,12 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        DB::table("pelanggan")->where("id", $id)->update([
-            "nama"=>$request->namapelanggan,
-            "kelamin"=>$request->jeniskelamin,
-            "alamat"=>$request->alamatpelanggan,
-            "no_telp"=>$request->nomorTelphone,
-            "no_ktp"=>$request->nomerKTP
+        Pelanggan::where("id", $id)->update([
+            "nama"      =>$request->namapelanggan,
+            "kelamin"   =>$request->jeniskelamin,
+            "alamat"    =>$request->alamatpelanggan,
+            "no_telp"   =>$request->nomorTelphone,
+            "no_ktp"    =>$request->nomerKTP
         ]);
         return redirect("/Pelanggan");
     }

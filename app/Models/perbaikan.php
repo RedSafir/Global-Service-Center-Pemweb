@@ -19,11 +19,11 @@ class Perbaikan extends Model
 
     public function barang_gudang()
     {
-        return $this->belongsTo(barang_gudang::class);
+        return $this->belongsTo(Barang_gudang::class);
     }
 
     public function barang_pelanggan()
     {
-        return $this->belongsTo(barang_pelanggan::class);
+        return $this->belongsTo(Barang_pelangan::class);
     }
 }

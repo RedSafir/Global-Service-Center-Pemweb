@@ -17,13 +17,13 @@ class Transaksi extends Model
         "id"
     ];
 
-    // public function perbaikan()
-    // {
-    //     return $this->belongsTo(perbaikan::class);
-    // }
+    public function perbaikan()
+    {
+        return $this->belongsTo(Perbaikan::class);
+    }
 
     public function pelanggan()
     {
-        return $this->belongsTo(pelanggan::class);
+        return $this->belongsTo(Pelanggan::class);
     }
 }

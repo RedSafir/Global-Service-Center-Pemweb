@@ -43,22 +43,21 @@
         </div>
         <div class="mb-3">
             <label for="pelanggan" class="form-label">Pelanggan</label>
-            {{-- <input type="text" class="form-control" id="pelanggan" name="pelanggan"> --}}
             <select name="pelanggan" id="pelanggan">
                 @foreach ($pelanggans as $pelanggan)
-                    <option value="{{ $pelanggan->id }}">{{ $pelanggan->nama }}</option>
+                <option value="{{ $pelanggan->id }}">{{ $pelanggan->nama }}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-3">
             <label for="kerusakan" class="form-label">Kerusakan</label>
             <textarea class="form-control" id="kerusakan" name="kerusakan"></textarea>
-    </div>
+        </div>
         <div class="mb-3">
             <label for="item_perlu" class="form-label">Item yang di perlukan</label>
             <select name="item_perlu" id="item_perlu">
                 @foreach ($items as $item)
-                    <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
+                <option value="{{ $item->id }}">{{ $item->nama_barang }}</option>
                 @endforeach
             </select>
         </div>

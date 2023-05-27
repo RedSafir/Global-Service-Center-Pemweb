@@ -62,7 +62,7 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Alamat</th>
-                                <th scope="col">JK</th>
+                                <th scope="col">Kelamin</th>
                                 <th scope="col">No Telp</th>
                                 <th scope="col">No KTP</th>
                                 <th scope="col">Aksi</th>
@@ -76,12 +76,11 @@
                                 <tr>
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $pelanggan->nama }}</td>
-                                    <td>{{ $pelanggan->kelamin }}</td>
                                     <td>{{ $pelanggan->alamat }}</td>
+                                    <td>{{ $pelanggan->kelamin }}</td>
                                     <td>{{ $pelanggan->no_telp }}</td>
                                     <td>{{ $pelanggan->no_ktp }}</td>
                                     <td>
-                                        <button class="btn btn-primary">Detail</button>
                                         <button class="btn btn-warning"><a href="/Pelanggan/EditPelanggan/{{ $pelanggan->id }}/Edit">Edit</a></button>
                                         <form action="/Pelanggan/{{ $pelanggan->id }}" method="post" style="display: inline">
                                             @csrf

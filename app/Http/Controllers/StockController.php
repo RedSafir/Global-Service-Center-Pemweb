@@ -24,7 +24,7 @@ class StockController extends Controller
      */
     public function create()
     {
-        return view("TambahStock");
+        return view("tambah.TambahStock");
     }
 
     /**
@@ -32,12 +32,13 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Barang_gudang();
-        $model->nama_barang = $request->nama;
-        $model->keterangan = $request->jenis;
-        $model->harga = $request->harga;
-        $model->stock = $request->stock;
-        $model->save();
+        Barang_gudang::create([
+            "nama_barang"=>$request->nama,
+            "keterangan"=>$request->jenis,
+            "harga"=>$request->harga,
+            "stock"=> $request->stock
+        ]);
+        
         return redirect()->back();
     }
 
@@ -54,7 +55,7 @@ class StockController extends Controller
      */
     public function edit(string $id)
     {
-        $barang = DB::table("Barang_gudang")->where("id", $id)->first();
+        $barang = Barang_gudang::where("id", $id)->first();
         return view("edit.EditStock", ["barang"=>$barang]);
     }
 
@@ -63,7 +64,7 @@ class StockController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        DB::table("barang_gudang")->where("id", $id)->update([
+        Barang_gudang::where("id", $id)->update([
             "nama_barang"=>$request->nama,
             "keterangan"=>$request->jenis,
             "harga"=>$request->harga,
@@ -78,7 +79,7 @@ class StockController extends Controller
      */
     public function destroy(string $id)
     {
-        $barang =Barang_gudang::find($id);
+        $barang = Barang_gudang::find($id);
         $barang->delete();
         return redirect()->back();
     }

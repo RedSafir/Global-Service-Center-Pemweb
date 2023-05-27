@@ -8,7 +8,7 @@ use Session;
 
 class LoginController extends Controller
 {
-    
+
     public function login()
     {
         $data['title'] = 'login';
@@ -21,14 +21,13 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-     
+
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             request()->session()->regenerate();
             return redirect()->intended('/home');
         }
 
         return back()->with('LoginError', 'Username atau Password salah');
-        
     }
     public function logout(Request $request)
     {

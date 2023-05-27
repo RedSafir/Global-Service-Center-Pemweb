@@ -48,7 +48,7 @@ class BayarController extends Controller
      */
     public function edit(string $id)
     {
-        $bayar = DB::table("transaksi")->where("id", $id)->first();
+        $bayar = Transaksi::where("id", $id)->first();
         $pelanggan = Pelanggan::find($bayar->pelanggan_id)->nama;
         return view("tambah.TambahBayar", ["bayar"=>$bayar, "pelanggan"=>$pelanggan]);
     }
@@ -58,10 +58,20 @@ class BayarController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $bayar = DB::table("transaksi")->where("id", $id)->first();
+        $bayar = Transaksi::where("id", $id)->first();
         $bayarBaru = $bayar->tot_harga - $request->jumlah_pembayaran;
-        DB::table("transaksi")->where("id", $id)->update([
-            "tot_harga"=>$bayarBaru
+
+        $status = False;
+        
+        if(!($bayar->status_trans)){
+            $status = True;
+            $bayarBaru = 0;
+        } 
+            
+
+        Transaksi::where("id", $id)->update([
+            "tot_harga"=>$bayarBaru,
+            "status_trans"=>$status
         ]);
 
         return redirect("/Bayar");

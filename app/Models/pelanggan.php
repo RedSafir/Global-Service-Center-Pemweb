@@ -19,7 +19,7 @@ class Pelanggan extends Model
 
     public function transaksi()
     {
-        return $this->hasMany(transaksi::class);
+        return $this->hasMany(Transaksi::class);
     }
 
     public function barang_pelanggan()

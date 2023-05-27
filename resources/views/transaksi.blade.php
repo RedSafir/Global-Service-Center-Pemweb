@@ -53,12 +53,12 @@
             @foreach ($transaksis as $transaksi)
             <tr>
                 <td>{{ $i++ }}</td>
-                <td>{{ $transaksi->nama_barang }}</td>
+                <td>{{ $transaksi->perbaikan->barang_pelanggan->nama_barang }}</td>
                 <td>{{ $transaksi->pelanggan->nama }}</td>
                 <td>{{ ($transaksi->status)? "selesai": "Proses" }}</td>
                 <td>{{ $transaksi->Foto }}</td>
                 <td>{{ $transaksi->tot_harga }}</td>
-                <td><button class="btn btn-primary"><a href="/Transaksi/Detail/{{ $transaksi->id }}">Detail</a></button></td>
+                <td><button class="btn btn-primary"><a href="/Transaksi/Detail/{{ $transaksi->id }}/Ubah">Detail</a></button></td>
             </tr>
             @endforeach
 

@@ -25,57 +25,59 @@
 
 @section('container')
 <div class="container mt-5">
-    <h2>Form Tambah Stock</h2>
+    <h2>Detail Transaksi</h2>
     <button class="btn btn-secondary" onclick="window.history.back();">
         <i class="fas fa-arrow-left"></i> Kembali
     </button>
 
-    <form method="POST" action="/submit-service" enctype="multipart/form-data">
+    <form method="POST" action="/Transaksi/Detail/{{ $transaksi->id }}" enctype="multipart/form-data">
+        @method('put')
         @csrf
         <div class="mb-3">
             <label for="kode_invoice" class="form-label">Kode Invoice</label>
-            <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" value="{{ $transaksi->invoice }}">
+            <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" value="{{ $transaksi->invoice }} " readonly>
         </div>
         <div class="mb-3">
             <label for="nama_barang" class="form-label">Nama Barang</label>
-            <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ $transaksi->nama_barang }}">
+            <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ $transaksi->perbaikan->barang_pelanggan->nama_barang }}" readonly>
         </div>
         <div class="mb-3">
             <label for="pelanggan" class="form-label">Pelanggan</label>
-            <input type="text" class="form-control" id="pelanggan" name="pelanggan" value="{{ $transaksi->pelanggan_id }}">
+            <input type="text" class="form-control" id="pelanggan" name="pelanggan" value="{{ $transaksi->pelanggan->nama }}" readonly>
         </div>
         <div class="mb-3">
             <label for="kerusakan" class="form-label">Kerusakan</label>
-            <input class="form-control" id="kerusakan" name="kerusakan" value="{{ $transaksi->kerusakan }}">
+            <input class="form-control" id="kerusakan" name="kerusakan" value="{{ $transaksi->perbaikan->kerusakan }}" readonly>
         </div>
         <div class="mb-3">
-            <label for="jumlah_item" class="form-label">Jumlah Item</label>
-            <input type="number" class="form-control" id="jumlah_item" name="jumlah_item" value="{{ $transaksi->jumlah_butuh }}">
+            <label for="jumlah_item" class="form-label">Item yang di perlukan</label>
+            <input type="text" class="form-control" id="jumlah_item" name="jumlah_item" value="{{ $transaksi->perbaikan->barang_pelanggan->nama_barang}}" readonly>
         </div>
         <div class="mb-3">
             <label for="jumlah" class="form-label">Jumlah</label>
-            <input type="number" class="form-control" id="jumlah" name="jumlah" value="{{ $transaksi->jumlah_butuh }}">
+            <input type="number" class="form-control" id="jumlah" name="jumlah" value="{{ $transaksi->perbaikan->jumlah_butuh }}" readonly>
         </div>
         <div class="mb-3">
             <label for="biaya_service" class="form-label">Biaya Service</label>
-            <input type="number" class="form-control" id="biaya_service" name="biaya_service" value="{{ $transaksi->tot_harga }}">
+            <input type="number" class="form-control" id="biaya_service" name="biaya_service" value="{{ $transaksi->tot_harga }}" readonly>
         </div>
         <div class="mb-3">
-            <label for="batas_waktupem" class="form-label">StatusTransaksi</label>
-            <input type="text" class="form-control" id="batas_waktupem" name="batas_waktupem" value="{{ ($transaksi->status)? "selesai": "Proses" }}">
-        </div>
-        <div class="form-group">
-            <label for="option">Pilihan:</label>
-            <select class="form-control" id="option" name="option">
-                <option value="">Pilih</option>
-                <option value="option1">Baru</option>
-                <option value="option2">Lama</option>
+            <label for="status" class="form-label">Status Proses</label>
+            <select class="form-control" id="option" name="status">
+                <option value="True" {{ ($transaksi->perbaikan->status)? "": "Default" }}>Diproses  </option>
+                <option value="False" {{ ($transaksi->perbaikan->status)? "Default": "" }}>Selesai</option>
             </select>
         </div>
         <div class="mb-3">
-            <label for="gambar" class="form-label">Gambar</label>
+            <label for="gambarLama" class="form-label">Sebelum di perbaiki</label>
+            <br>
+            <img src="{{ asset('barang/' . $transaksi->perbaikan->barang_pelanggan->foto_barang) }}" alt="err" width="400" height="400">
+        </div>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Setelah di perbaiki</label>
             <input type="file" class="form-control" id="gambar" name="gambar">
         </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
 </div>
 @endsection

@@ -51,9 +51,9 @@
                         @foreach ($bayars as $bayar):
                         <tr>
                             <td>{{ $i++ }}</td> 
-                            <td>{{ $bayar->nama_barang }}</td>
+                            <td>{{ $bayar->perbaikan->barang_pelanggan->nama_barang }}</td>
                             <td>{{ $bayar->pelanggan->nama }}</td>
-                            <td>{{ ($bayar->status)?"Selesai":"Process" }}</td>
+                            <td>{{ ($bayar->status_trans)? "Selesai":"Process" }}</td>
                             <td>{{ $bayar->tot_harga }}</td>
                             <td>
                                 <button class="btn btn-primary"><a href="/Bayar/Pembayaran/{{ $bayar->id }}/Bayar">Pilih</a></button>

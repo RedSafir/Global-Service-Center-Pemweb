@@ -19,11 +19,11 @@ class Barang_pelangan extends Model
 
     public function pelanggan()
     {
-        return $this->belongsTo(pelanggan::class);
+        return $this->belongsTo(Pelanggan::class);
     }
 
     public function perbaikan()
     {
-        return $this->hasMany(perbaikan::class);
+        return $this->hasMany(Perbaikan::class);
     }
 }

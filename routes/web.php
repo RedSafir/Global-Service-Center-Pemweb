@@ -3,6 +3,7 @@
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\StockController;
@@ -31,13 +32,9 @@ Route::get('/', function () {
     return view('MainMenu');
 })->name('MainMenu');
 
-Route::get('/home', function () {
-    return view('Home');
-});
+Route::get('/home', [HomeController::class, "index"]);
 
-Route::get('/stock', function () {
-    return view('stock');
-});
+Route::get("/home/{id}", [HomeController::class, "detail"]);
 
 Route::post('/login', [LoginController::class, 'login_action']);
 
@@ -65,7 +62,9 @@ Route::post('/Transaksi',[TransaksiController::class, "store"]);
 
 Route::get('/Transaksi/Konfirmasi', [TransaksiController::class, "konfirmasi"]);
 
-Route::get('/Transaksi/Detail/{id}', [TransaksiController::class, "show"]);
+Route::get('/Transaksi/Detail/{id}/Ubah', [TransaksiController::class, "show"]);
+
+Route::put('/Transaksi/Detail/{id}', [TransaksiController::class, "show"]);
 
 /* ================================================ Pembayaran ========================================== */
 Route::get('/Bayar', [BayarController::class, "index"]);
@@ -88,6 +87,7 @@ Route::delete('/Pelanggan/{id}',[PelangganController::class, "destroy"]);
 Route::get("/Pelanggan/EditPelanggan/{id}/Edit", [PelangganController::class, "edit"]);
 
 Route::put("/Pelanggan/EditPelanggan/{id}", [PelangganController::class, "update"]);
+
 
 
 

@@ -35,15 +35,15 @@
             @csrf
             <div class="mb-3">
                 <label for="kode_invoice" class="form-label">Kode Invoice</label>
-                <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" value="{{ $bayar->invoice }}">
+                <input type="text" class="form-control" id="kode_invoice" name="kode_invoice" value="{{ $bayar->invoice }}" readonly>
             </div>
             <div class="mb-3">
                 <label for="nama_member" class="form-label">Nama Member</label>
-                <input type="text" class="form-control" id="nama_member" name="nama_member" value="{{ $pelanggan }}">
+                <input type="text" class="form-control" id="nama_member" name="nama_member" value="{{ $pelanggan }}" readonly>
             </div>
             <div class="mb-3">
                 <label for="total_bayar" class="form-label">Total yang Harus Dibayar</label>
-                <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="{{ $bayar->tot_harga }}">
+                <input type="number" class="form-control" id="total_bayar" name="total_bayar" value="{{ $bayar->tot_harga }}" readonly>
             </div>
             <div class="mb-3">
                 <label for="jumlah_pembayaran" class="form-label">Jumlah Pembayaran</label>
