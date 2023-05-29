@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('MainMenu');
 });
 
+Route::get('/awal', function () {
+    return view('awal');
+});
+
 Route::get('/', function () {
     return view('MainMenu');
 })->name('MainMenu');

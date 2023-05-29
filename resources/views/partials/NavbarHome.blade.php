@@ -68,7 +68,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand text-center mx-auto" href="/home">
+            <a class="navbar-brand text-center mx-auto" href="/awal">
                 <img src="{{ asset('images\image1.jpg') }}" alt="Logo" width="40" height="40" class="me-2">
                 Global Service Center
             </a>

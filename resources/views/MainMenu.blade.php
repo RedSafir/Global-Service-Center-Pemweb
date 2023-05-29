@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="text-center mt-3">
                                         <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                        <a href="#" class="btn btn-secondary">Registrasi</a>
+                                        
                                     </div>
 
                                 </form>

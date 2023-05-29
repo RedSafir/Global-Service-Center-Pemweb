@@ -26,26 +26,8 @@
 <body>
   @include('partials.NavbarHome');
 
-  <div class="card-group mt-5">
-    <div class="card ms-5 me-5">
-      <div class="card-body">
-        <h5 class="card-title">Statistik Pelanggan</h5>
-        <div class="chart-container">
-          <canvas id="customerChart" style="width: 100%; height: 100%;"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <div class="card me-5 ms-5">
-      <div class="card-body">
-        <h5 class="card-title">Statistik Transaksi</h5>
-        <div class="chart-container">
-          <canvas id="transactionChart" style="width: 100%; height: 100%;"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
+  <div class="mt-5">
   <div class="card mt-5 me-5 ms-5">
     <div class="card-body">
       <div class="table-responsive">
@@ -84,6 +66,7 @@
 
 
   </div>
+</div>
 </body>
 @include('partials.Footer')
 <script>

@@ -20,19 +20,14 @@
       margin-left: auto;
       font-size: 30px;
     }
-    a {
-        color: #434242;
-    }
-    a:hover {
-        color: #FFFFFF;
-    }
+    
 
 </style>
 <header>
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
         
-        <a class="navbar-brand text-center mx-auto" href="/home">
+        <a class="navbar-brand text-center mx-auto" href="/awal">
             <img src="{{ asset('images\image1.jpg') }}" alt="Logo" width="40" height="40" class="me-2">
             Global Service Center
         </a>
